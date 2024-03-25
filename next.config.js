@@ -40,6 +40,6 @@ const nextConfig = {
 };
 
 module.exports = withSerwist({
-  nextConfig,
+  ...nextConfig,
   // Your Next.js config
 });
