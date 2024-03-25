@@ -14,6 +14,7 @@ type Data = {
 export interface FetchWaterContextType {
   fetchAllData: () => Promise<Data>;
   fetchStatus: () => Promise<boolean>;
+  setdoneSwitching: (doneSwitching: boolean) => void;
   phValue: number;
   flowRate: number;
   turbidityValue: number;
@@ -22,11 +23,15 @@ export interface FetchWaterContextType {
   waterTemp: number;
   switchStatus: number;
   valveState: number;
+  doneSwitching: boolean;
 }
 
 // Create context
 export const FetchWaterContext: React.Context<FetchWaterContextType> =
   createContext<FetchWaterContextType>({
+    setdoneSwitching: () => {
+      throw new Error("FetchWaterContext.Provider not found");
+    },
     fetchAllData: async () => {
       throw new Error("FetchWaterContext.Provider not found");
     },
@@ -41,6 +46,7 @@ export const FetchWaterContext: React.Context<FetchWaterContextType> =
     waterTemp: 0,
     switchStatus: 0,
     valveState: 0,
+    doneSwitching: false,
   });
 
 // Fetch all data

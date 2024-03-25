@@ -2,14 +2,14 @@
 import React, { useContext } from "react";
 import SettingsBtns from "./SettingsBtns";
 import { Switch } from "@mui/material";
-import { ThemeContext } from "@/context/ThemeContext";
+import { useTheme } from "next-themes";
 import NightsStayIcon from "@mui/icons-material/NightsStay";
 
 const ThemeSelect = () => {
-  const { theme, setTheme } = useContext(ThemeContext);
+  const { resolvedTheme, theme, setTheme } = useTheme();
   return (
     <SettingsBtns
-      onClick={() => setTheme(theme == "dark" ? "light" : "dark")}
+      onClick={() => setTheme(resolvedTheme == "dark" ? "light" : "dark")}
       btnText="Mode"
       optText="Light and Dark"
       icon={<NightsStayIcon />}

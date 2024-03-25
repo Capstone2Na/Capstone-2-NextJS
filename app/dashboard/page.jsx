@@ -19,6 +19,7 @@ const Dashboard = () => {
   const [totalVolume, setTotalVolume] = useState(0);
   const [waterTemp, setWaterTemp] = useState(0);
   const [valveState, setValveState] = useState(true);
+  const [doneSwitching, setdoneSwitching] = useState(false);
 
   const executeFetchAllData = async () => {
     try {
@@ -31,6 +32,7 @@ const Dashboard = () => {
       setTotalVolume(data.v4);
       setWaterTemp(data.v5);
       setValveState(data.v9);
+      setdoneSwitching(true);
     } catch (error) {
       console.error("Error fetching all:", error);
     }
@@ -47,7 +49,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     executeFetchStatus();
-    const runFetchAllData = setInterval(executeFetchAllData, 2000);
+    const runFetchAllData = setInterval(executeFetchAllData, 3000);
     const runCheckStatus = setInterval(executeFetchStatus, 5000);
     return () => {
       clearInterval(runFetchAllData);
@@ -70,6 +72,8 @@ const Dashboard = () => {
           totalVolume,
           waterTemp,
           valveState,
+          doneSwitching,
+          setdoneSwitching,
         }}
       >
         <RouteBox>
