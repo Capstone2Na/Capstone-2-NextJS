@@ -8,6 +8,27 @@ body {
 * {
   @apply font-sans transition-colors duration-300 ease-in-out;
 }
+h1 {
+  @apply text-4xl font-bold;
+}
+h2 {
+  @apply text-3xl font-bold;
+}
+h3 {
+  @apply text-2xl font-semibold;
+}
+h4 {
+  @apply text-xl font-semibold;
+}
+h5 {
+  @apply text-lg font-medium;
+}
+h6 {
+  @apply text-base font-medium;
+}
+p {
+  @apply text-base;
+}
 
 :root {
   @apply max-h-lvh;
@@ -33,7 +54,7 @@ body {
   --color-text-error: rgba(245, 101, 101, 1); /* red-500 (example) */
   --color-bg-input: rgba(237, 242, 247, 1); /* gray-200 */
   --color-bg-button: rgba(37, 99, 235, 1); /* blue-500 */
-  --color-bg-button-hover: rgba(147, 197, 253, 1); /* blue-300 */
+  --color-bg-button-hover: rgb(0, 95, 204); /* blue-300 */
 }
 
 .dark {
@@ -41,7 +62,6 @@ body {
   --color-bg-primary-03: rgba(255, 255, 255, 0.3);
   --color-bg-secondary: rgba(74, 85, 104, 1); /* gray-700 */
   --color-bg-tertiary: rgba(203, 213, 224, 1); /* gray-300 */
-
   --color-text-primary: rgba(237, 242, 247, 1); /* gray-100 */
   --color-text-secondary: rgb(255, 255, 255); /* gray-100 */
   --color-text-tertiary: rgba(247, 250, 252, 1); /* gray-900 */
@@ -49,5 +69,5 @@ body {
   --color-text-error: rgba(237, 100, 166, 1); /* pink-500 (example) */
   --color-bg-input: rgba(74, 85, 104, 1); /* gray-700 */
   --color-bg-button: rgba(74, 85, 104, 1); /* gray-700 */
-  --color-bg-button-hover: rgba(66, 153, 225, 1); /* blue-500 */
+  --color-bg-button-hover: rgb(0, 102, 185); /* blue-500 */
 }

@@ -1,6 +1,6 @@
-import PropTypes from "prop-types";
+import { ReactNode } from "react";
 
-const RouteBox = ({ children }) => {
+const RouteBox = ({ children }: { children: ReactNode }) => {
   return (
     <div className="section w-screen h-full overflow-y-hidden overflow-x-scroll text-secondary">
       <div className="content flex-col justify-between items-center h-full py-4">
@@ -8,10 +8,6 @@ const RouteBox = ({ children }) => {
       </div>
     </div>
   );
-};
-
-RouteBox.propTypes = {
-  children: PropTypes.node,
 };
 
 export default RouteBox;

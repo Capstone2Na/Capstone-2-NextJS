@@ -1,11 +1,14 @@
 "use client";
 import { useState, useEffect, useContext } from "react";
 import Switch from "react-switch";
-import { FetchWaterContext } from "@/services/water.service";
+import {
+  FetchWaterContext,
+  FetchWaterContextType,
+} from "@/services/water.service";
 
 const SwitchComponent = () => {
   const [checked, setChecked] = useState(false);
-  const { valveState } = useContext(FetchWaterContext);
+  const { valveState } = useContext(FetchWaterContext) as FetchWaterContextType;
   const valveStateURL = process.env.NEXT_PUBLIC_API_VALVE_STATE;
   const setValveState = process.env.NEXT_PUBLIC_API_SET_VALVE_STATE;
 
@@ -22,6 +25,9 @@ const SwitchComponent = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        if (!valveStateURL) {
+          throw new Error("valveStateURL is not defined");
+        }
         const response = await fetch(valveStateURL);
         const text = await response.text();
         if (!text) {
@@ -37,7 +43,7 @@ const SwitchComponent = () => {
     fetchData();
   });
 
-  const handleChange = (checked) => {
+  const handleChange = (checked: boolean) => {
     console.log(checked);
     setChecked(checked);
 

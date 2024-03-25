@@ -2,7 +2,7 @@
 import HomeWaterQuality from "@/components/3lg/HomeWaterQuality";
 import HomeWaterFlow from "@/components/3lg/HomeWaterFlow";
 import ValveSwitch from "@/components/2md/ValveSwitch";
-import RouteBox from "@/components/3lg/RouteBox";
+import RouteBox from "@/components/1sm/RouteBox";
 import {
   FetchWaterContext,
   fetchAllData,
@@ -11,7 +11,7 @@ import {
 import { useState, useEffect } from "react";
 
 const Dashboard = () => {
-  const [deviceOnline, setDeviceOnline] = useState(true); // Provide an initial value
+  const [deviceOnline, setDeviceOnline] = useState(true);
   const [phValue, setPhValue] = useState(0);
   const [flowRate, setFlowRate] = useState(0);
   const [turbidityValue, setTurbidityValue] = useState(0);

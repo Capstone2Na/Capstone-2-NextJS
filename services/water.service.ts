@@ -21,6 +21,7 @@ export interface FetchWaterContextType {
   totalVolume: number;
   waterTemp: number;
   switchStatus: number;
+  valveState: number;
 }
 
 // Create context
@@ -39,6 +40,7 @@ export const FetchWaterContext: React.Context<FetchWaterContextType> =
     totalVolume: 0,
     waterTemp: 0,
     switchStatus: 0,
+    valveState: 0,
   });
 
 // Fetch all data
