@@ -1,12 +1,16 @@
 "use client";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, use } from "react";
 import Switch from "react-switch";
-import { FetchWaterContext } from "@/services/water.service";
+import {
+  FetchWaterContext,
+  FetchWaterContextType,
+} from "@/services/water.service";
 
 const SwitchComponent = () => {
   const [checked, setChecked] = useState(false);
-  const { valveState } = useContext(FetchWaterContext);
-  const valveStateURL = process.env.NEXT_PUBLIC_API_VALVE_STATE;
+  const { valveState, doneSwitching, setdoneSwitching } = useContext(
+    FetchWaterContext
+  ) as FetchWaterContextType;
   const setValveState = process.env.NEXT_PUBLIC_API_SET_VALVE_STATE;
 
   useEffect(() => {
@@ -14,33 +18,17 @@ const SwitchComponent = () => {
       if (checked !== false) {
         setChecked(false);
       }
+    } else if (valveState == 1) {
+      if (checked !== true) {
+        setChecked(true);
+      }
     } else {
-      setChecked(true);
+      console.log("Error: Valve state is not 0 or 1");
     }
   }, [valveState, checked]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(valveStateURL);
-        const text = await response.text();
-        if (!text) {
-          throw new Error("No response from server");
-        }
-        const data = JSON.parse(text);
-        const switchState = data == "1";
-        setChecked(switchState);
-      } catch (error) {
-        console.error("There's Error:", error);
-      }
-    };
-    fetchData();
-  });
-
-  const handleChange = (checked) => {
-    console.log(checked);
-    setChecked(checked);
-
+  const handleChange = (checked: boolean) => {
+    setdoneSwitching(false);
     const url = checked
       ? setValveState + "1" // Set switch to ON
       : setValveState + "0"; // Set switch to OFF
@@ -52,7 +40,9 @@ const SwitchComponent = () => {
         }
         return response.text();
       })
-      .then((data) => console.log(data))
+      .then(() => {
+        setChecked(checked);
+      })
       .catch((error) => console.error("There's Error:", error));
   };
 
@@ -60,6 +50,7 @@ const SwitchComponent = () => {
     <div className="flex flex-col justify-center items-center pt-5">
       <label htmlFor="material-switch">
         <Switch
+          disabled={!doneSwitching}
           checked={checked}
           onChange={handleChange}
           onColor="#86d3ff"

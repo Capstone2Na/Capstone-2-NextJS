@@ -2,7 +2,7 @@
 import HomeWaterQuality from "@/components/3lg/HomeWaterQuality";
 import HomeWaterFlow from "@/components/3lg/HomeWaterFlow";
 import ValveSwitch from "@/components/2md/ValveSwitch";
-import RouteBox from "@/components/3lg/RouteBox";
+import RouteBox from "@/components/1sm/RouteBox";
 import {
   FetchWaterContext,
   fetchAllData,
@@ -11,7 +11,7 @@ import {
 import { useState, useEffect } from "react";
 
 const Dashboard = () => {
-  const [deviceOnline, setDeviceOnline] = useState(true); // Provide an initial value
+  const [deviceOnline, setDeviceOnline] = useState(true);
   const [phValue, setPhValue] = useState(0);
   const [flowRate, setFlowRate] = useState(0);
   const [turbidityValue, setTurbidityValue] = useState(0);
@@ -19,6 +19,7 @@ const Dashboard = () => {
   const [totalVolume, setTotalVolume] = useState(0);
   const [waterTemp, setWaterTemp] = useState(0);
   const [valveState, setValveState] = useState(true);
+  const [doneSwitching, setdoneSwitching] = useState(false);
 
   const executeFetchAllData = async () => {
     try {
@@ -31,6 +32,7 @@ const Dashboard = () => {
       setTotalVolume(data.v4);
       setWaterTemp(data.v5);
       setValveState(data.v9);
+      setdoneSwitching(true);
     } catch (error) {
       console.error("Error fetching all:", error);
     }
@@ -47,7 +49,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     executeFetchStatus();
-    const runFetchAllData = setInterval(executeFetchAllData, 2000);
+    const runFetchAllData = setInterval(executeFetchAllData, 3000);
     const runCheckStatus = setInterval(executeFetchStatus, 5000);
     return () => {
       clearInterval(runFetchAllData);
@@ -70,6 +72,8 @@ const Dashboard = () => {
           totalVolume,
           waterTemp,
           valveState,
+          doneSwitching,
+          setdoneSwitching,
         }}
       >
         <RouteBox>

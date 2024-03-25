@@ -1,8 +1,13 @@
-"use client";
 import React from "react";
 import Drawer from "@mui/material/Drawer";
 import { IconButton } from "@mui/material";
 import { ArrowBackIosNew } from "@mui/icons-material";
+import UserProfile from "../2md/UserProfile";
+import SettingsSec from "../1sm/SettingsSec";
+import ThemeSelect from "../1sm/ThemeSelect";
+import ChangePassBtn from "../1sm/ChangePassBtn";
+import LogoutButton from "../1sm/LogoutButton";
+import { appLabels } from "@/app/appLabels";
 
 const RightDrawer = ({
   open,
@@ -13,8 +18,8 @@ const RightDrawer = ({
 }) => {
   return (
     <Drawer open={open} anchor="right">
-      <div className="w-[100vw] max-w-3xl h-lvh">
-        <div className="p-2 flex flex-row items-center justify-center border-b border-gray-200 relative text-primary bg-primary">
+      <div className="w-[100vw] max-w-3xl h-lvh bg-tertiary">
+        <div className="p-2 flex flex-row items-center justify-center border-b border-gray-200 relative text-primary bg-primary h-16">
           <IconButton
             size="large"
             className="text-primary absolute left-2 top-0 bottom-0"
@@ -22,9 +27,19 @@ const RightDrawer = ({
           >
             <ArrowBackIosNew />
           </IconButton>
-          <h6>User</h6>
+          <h6 className="text-xl font-bold">{appLabels.rightDrawer.label}</h6>
         </div>
-        <div className="p-3 overflow-y-auto"></div>
+        <div className="p-3 overflow-y-auto">
+          {/* Settings Section */}
+          <UserProfile />
+        </div>
+        <SettingsSec title={appLabels.rightDrawer.generalSettings}>
+          <ThemeSelect />
+        </SettingsSec>
+        <SettingsSec title={appLabels.rightDrawer.accountSettings}>
+          <ChangePassBtn />
+          <LogoutButton />
+        </SettingsSec>
       </div>
     </Drawer>
   );
