@@ -1,4 +1,3 @@
-import React from "react";
 import HomeIcon from "@mui/icons-material/Home";
 import SpeedIcon from "@mui/icons-material/Speed";
 import TimelineIcon from "@mui/icons-material/Timeline";
