@@ -1,7 +1,5 @@
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { Box, IconButton, Typography } from "@mui/material";
 import ProfileButton from "../1sm/ProfileButton";
-// import Button from "@mui/material/Button";
 
 export default function PageUpper() {
   return (
@@ -13,7 +11,6 @@ export default function PageUpper() {
           </Typography>
           <ProfileButton />
         </Box>
-        {/* <Button variant="contained">text test testooo</Button> */}
       </Box>
     </>
   );

@@ -1,5 +1,5 @@
 "use client";
-import { Box, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import FlowRateComponent from "../2md/FlowRateComponent";
 import WaterLevelComponent from "../2md/WaterLevelComponent";
 import { useContext } from "react";
@@ -11,9 +11,9 @@ const HomeWaterFlow: React.FC = () => {
   ) as FetchWaterContextType;
 
   return (
-    <Box className="w-full px-3 pb-4 bg-primary03 rounded-lg">
-      <Box className="flex flex-row w-full justify-center">
-        <Box className="w-2/3">
+    <div className="w-full px-3 pb-4 bg-primary03 rounded-lg">
+      <div className="flex flex-row w-full justify-center">
+        <div className="w-2/3">
           <FlowRateComponent />
           <Typography
             variant="body2"
@@ -22,16 +22,16 @@ const HomeWaterFlow: React.FC = () => {
             {"Flow Rate"}
             <span className="text-sm font-bold">{" (L/m)"}</span>
           </Typography>
-        </Box>
+        </div>
 
-        <Box className="w-1/3 pr-3 flex flex-col items-center justify-start">
+        <div className="w-1/3 pr-3 flex flex-col items-center justify-start">
           <WaterLevelComponent color={"rgb(147 197 253)"} value={waterLevel} />
           <Typography variant="body2" className="text-xs -mt-12">
             Water Level
           </Typography>
-        </Box>
-      </Box>
-      <Box className="w-full flex pt-4 mt-4">
+        </div>
+      </div>
+      <div className="w-full flex pt-4 mt-4">
         <Typography variant="body1" className="ml-3 text-xs">
           Total Water Consumed:{" "}
           <span className="font-bold">
@@ -39,8 +39,8 @@ const HomeWaterFlow: React.FC = () => {
             {" Liters"}
           </span>
         </Typography>
-      </Box>
-    </Box>
+      </div>
+    </div>
   );
 };
 

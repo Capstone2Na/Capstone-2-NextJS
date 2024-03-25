@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import LinearProgress from "@mui/material/LinearProgress";
 
@@ -25,9 +24,9 @@ const Loader: React.FC = () => {
   return (
     <>
       <CssBaseline />
-      <Box sx={{ width: "100%" }}>
+      <div className="w-full">
         <LinearProgress variant="determinate" value={progress} />
-      </Box>
+      </div>
     </>
   );
 };
