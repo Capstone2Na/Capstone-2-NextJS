@@ -25,7 +25,7 @@ const TurbidityComponent = () => {
             color: "#5BE12C",
             showTick: true,
             tooltip: {
-              text: "Safe Water",
+              text: "Clear Water",
             },
           },
           {
@@ -33,13 +33,13 @@ const TurbidityComponent = () => {
             color: "#F5CD19",
             showTick: true,
             tooltip: {
-              text: "Warning: Water slightly Alkaline",
+              text: "From-To NTU: Slightly Turbid",
             },
           },
           {
             color: "#EA4228",
             tooltip: {
-              text: "Too high temperature!",
+              text: "High Turbidity",
             },
           },
         ],
@@ -52,8 +52,6 @@ const TurbidityComponent = () => {
       }}
       labels={{
         valueLabel: {
-          // formatTextValue: (value) => "Turbidity: " + value.toFixed(2),
-          // fontSize: 1,
           hide: true,
         },
         tickLabels: {

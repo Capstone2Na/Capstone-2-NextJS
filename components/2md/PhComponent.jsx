@@ -28,17 +28,13 @@ const PhComponent = () => {
                 text: "Water is too Acidic!",
               },
               onClick: () => console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"),
-              onMouseMove: () =>
-                console.log("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB"),
-              onMouseLeave: () =>
-                console.log("CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC"),
             },
             {
               limit: 5.5,
               color: "#F5CD19",
               showTick: true,
               tooltip: {
-                text: "Warning: Acidic Water",
+                text: "Acidic Water",
               },
             },
             {
@@ -54,13 +50,13 @@ const PhComponent = () => {
               color: "#F5CD19",
               showTick: true,
               tooltip: {
-                text: "Warning: Water slightly Alkaline",
+                text: "Water Slightly Alkaline",
               },
             },
             {
               color: "#EA4228",
               tooltip: {
-                text: "Too high temperature!",
+                text: "Water Too Alkaline",
               },
             },
           ],
