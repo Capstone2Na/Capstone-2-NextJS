@@ -35,9 +35,8 @@
     ".next/types/**/*.ts",
     "context/ThemeContext.tsx",
     "components/**/*.tsx",
-    "components/**/*.jsx",
-    "app/dashboard/he",
-    "app/dashboard/page.jsx"
+    "app/**/*.tsx",
+    "app/**/*.ts"
   ],
   "exclude": ["node_modules"]
 }

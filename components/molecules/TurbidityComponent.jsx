@@ -1,6 +1,5 @@
 "use client";
 import { useContext } from "react";
-// import GaugeComponent from "react-gauge-component";
 import { FetchWaterContext } from "../../services/water.service";
 import dynamic from "next/dynamic";
 const GaugeComponent = dynamic(() => import("react-gauge-component"), {
