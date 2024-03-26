@@ -1,4 +1,16 @@
-/** @type {import('next').NextConfig} */
+/**
+ * @type {import('next').NextConfig}
+ */
+
+const withSerwist = require("@serwist/next").default({
+  // Note: This is only an example. If you use Pages Router,
+  // use something else that works, such as "service-worker/index.ts".
+  swSrc: "app/sw.ts",
+  swDest: "public/sw.js",
+  cacheOnFrontEndNav: true,
+  reloadOnOnline: true,
+});
+
 const nextConfig = {
   rewrites: async () => {
     return [
@@ -27,4 +39,7 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+module.exports = withSerwist({
+  ...nextConfig,
+  // Your Next.js config
+});
