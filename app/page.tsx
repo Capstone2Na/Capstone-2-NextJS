@@ -3,9 +3,6 @@ import Link from "next/link";
 import { appLabels } from "./appLabels";
 
 export default function Home() {
-  // useEffect(() => {
-  //   console.log(process.env.NEXT_PUBLIC_API_TOKEN);
-  // });
   return (
     <main className="content items-center overflow-x-hidden overflow-y-auto mx-auto h-full max-h-full text-secondary">
       <div className="flex flex-col pt-6">

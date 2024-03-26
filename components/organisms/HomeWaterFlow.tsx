@@ -4,7 +4,7 @@ import { appLabels } from "@/app/appLabels";
 import TotalVolumeComponent from "../molecules/TotalVolumeComponent";
 const HomeWaterFlow: React.FC = () => {
   return (
-    <div className="w-full px-3 pb-4 bg-primary03 rounded-lg">
+    <div className="w-full px-3 pb-4 bg-primary03 rounded-lg lg:py-10 flex flex-col lg:gap-10 ">
       <div className="flex flex-row w-full justify-center">
         <div className="w-2/3 md:w-3/5">
           <FlowRateComponent />

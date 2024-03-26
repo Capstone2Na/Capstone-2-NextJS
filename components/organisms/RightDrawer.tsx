@@ -18,7 +18,7 @@ const RightDrawer = ({
 }) => {
   return (
     <Drawer open={open} anchor="right">
-      <div className="w-[100vw] max-w-3xl h-lvh bg-tertiary">
+      <div className="w-[100vw] md:w-[50vw] lg:w-[30vw] max-w-3xl  md:maxw h-lvh bg-tertiary">
         <div className="p-2 flex flex-row items-center justify-center border-b border-gray-200 relative text-primary bg-primary h-16">
           <IconButton
             size="large"

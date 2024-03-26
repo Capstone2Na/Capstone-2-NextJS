@@ -7,7 +7,7 @@ import { appLabels } from "@/app/appLabels";
 const HomeWaterQuality = () => {
   const { waterTemp, turbidityValue, phValue } = useContext(FetchWaterContext);
   return (
-    <div className=" flex flex-col w-full py-4 gap-3 bg-primary03 rounded-lg text-inherit">
+    <div className=" flex flex-col w-full py-4 gap-3 bg-primary03 rounded-lg text-inherit lg:py-16">
       <h4 className=" text-center  flex-nowrap text-inherit font-semibold text-md md:text-xl">
         {appLabels.dashboard.waterQuality.temp.title}:{" "}
         <span className="font-bold text-lg md:text-2xl">
