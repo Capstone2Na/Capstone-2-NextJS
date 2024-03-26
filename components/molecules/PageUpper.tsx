@@ -1,5 +1,5 @@
 import { appLabels } from "@/app/appLabels";
-import ProfileButton from "../1sm/ProfileButton";
+import ProfileButton from "../atoms/ProfileButton";
 
 export default function PageUpper() {
   return (

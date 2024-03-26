@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { IconButton } from "@mui/material";
-import RightDrawer from "@/components/3lg/RightDrawer";
+import RightDrawer from "@/components/organisms/RightDrawer";
 
 const ProfileButton = () => {
   const [open, setOpen] = useState(false);

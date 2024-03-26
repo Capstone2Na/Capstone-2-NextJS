@@ -3,10 +3,10 @@
 @tailwind utilities;
 body {
   font-family: "Noto Sans JP Variable", sans-serif !important;
-  @apply h-lvh max-h-lvh;
+  @apply h-lvh max-h-lvh max-w-[100vw] overflow-x-hidden mx-auto overflow-y-auto;
 }
 * {
-  @apply font-sans transition-colors duration-300 ease-in-out;
+  @apply transition-colors duration-300 ease-in-out;
 }
 h1 {
   @apply text-4xl font-bold;
@@ -31,7 +31,7 @@ p {
 }
 
 :root {
-  @apply max-h-lvh;
+  @apply max-h-lvh max-w-[100vw];
 }
 
 .section {

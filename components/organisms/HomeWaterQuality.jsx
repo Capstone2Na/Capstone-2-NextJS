@@ -1,6 +1,6 @@
 import { Typography } from "@mui/material";
-import TurbidityComponent from "../2md/TurbidityComponent";
-import PhComponent from "../2md/PhComponent";
+import TurbidityComponent from "../molecules/TurbidityComponent";
+import PhComponent from "../molecules/PhComponent";
 import { useContext } from "react";
 import { FetchWaterContext } from "../../services/water.service";
 import { appLabels } from "@/app/appLabels";

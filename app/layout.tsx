@@ -65,7 +65,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning={true}>
         <AppRouterCacheProvider>
-          <body className={inter.className}>
+          <body className={`${inter.className} mx-auto`}>
             <Providers>{children}</Providers>
           </body>
         </AppRouterCacheProvider>

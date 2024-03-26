@@ -1,8 +1,8 @@
 "use client";
-import HomeWaterQuality from "@/components/3lg/HomeWaterQuality";
-import HomeWaterFlow from "@/components/3lg/HomeWaterFlow";
-import ValveSwitch from "@/components/2md/ValveSwitch";
-import RouteBox from "@/components/1sm/RouteBox";
+import HomeWaterQuality from "@/components/organisms/HomeWaterQuality";
+import HomeWaterFlow from "@/components/organisms/HomeWaterFlow";
+import ValveSwitch from "@/components/molecules/ValveSwitch";
+import RouteBox from "@/components/atoms/RouteBox";
 import {
   FetchWaterContext,
   fetchAllData,
