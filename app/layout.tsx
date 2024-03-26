@@ -17,6 +17,7 @@ const APP_TITLE_TEMPLATE = `%s - ${appLabels.title}`;
 const APP_DESCRIPTION = appLabels.tagLine;
 
 export const metadata: Metadata = {
+  manifest: "/manifest.json",
   applicationName: APP_NAME,
   title: {
     default: APP_DEFAULT_TITLE,
