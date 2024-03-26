@@ -42,6 +42,13 @@ p {
   @apply container w-full flex justify-between;
 }
 
+.label {
+  @apply text-xs sm:text-sm font-bold md:text-lg;
+}
+.unit {
+  @apply text-xs sm:text-sm font-semibold md:text-lg text-tertiary;
+}
+
 .light {
   --color-bg-primary: rgba(37, 99, 235, 1); /* blue-500 */
   --color-bg-primary-03: rgba(37, 100, 235, 0.3); /* blue-500 */

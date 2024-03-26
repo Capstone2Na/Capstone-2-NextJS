@@ -7,7 +7,7 @@ export default function Home() {
   //   console.log(process.env.NEXT_PUBLIC_API_TOKEN);
   // });
   return (
-    <main className="content mx-auto h-full max-h-full overflow-y-auto">
+    <main className="content items-center overflow-x-hidden overflow-y-auto mx-auto h-full max-h-full text-secondary">
       <div className="flex flex-col pt-6">
         <div>
           <h1 className="text-3xl font-semibold mb-2 text-center">

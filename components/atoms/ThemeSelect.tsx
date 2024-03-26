@@ -1,5 +1,4 @@
 "use client";
-import React, { useContext } from "react";
 import SettingsBtns from "./SettingsBtns";
 import { Switch } from "@mui/material";
 import { useTheme } from "next-themes";
