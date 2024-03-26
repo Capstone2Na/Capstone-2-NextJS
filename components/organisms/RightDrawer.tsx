@@ -2,11 +2,11 @@ import React from "react";
 import Drawer from "@mui/material/Drawer";
 import { IconButton } from "@mui/material";
 import { ArrowBackIosNew } from "@mui/icons-material";
-import UserProfile from "../2md/UserProfile";
-import SettingsSec from "../1sm/SettingsSec";
-import ThemeSelect from "../1sm/ThemeSelect";
-import ChangePassBtn from "../1sm/ChangePassBtn";
-import LogoutButton from "../1sm/LogoutButton";
+import UserProfile from "../molecules/UserProfile";
+import SettingsSec from "../atoms/SettingsSec";
+import ThemeSelect from "../atoms/ThemeSelect";
+import ChangePassBtn from "../atoms/ChangePassBtn";
+import LogoutButton from "../atoms/LogoutButton";
 import { appLabels } from "@/app/appLabels";
 
 const RightDrawer = ({

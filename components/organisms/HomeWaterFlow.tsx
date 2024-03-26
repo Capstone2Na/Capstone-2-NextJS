@@ -1,7 +1,7 @@
-import FlowRateComponent from "../2md/FlowRateComponent";
-import WaterLevelComponent from "../2md/WaterLevelComponent";
+import FlowRateComponent from "../molecules/FlowRateComponent";
+import WaterLevelComponent from "../molecules/WaterLevelComponent";
 import { appLabels } from "@/app/appLabels";
-import TotalVolumeComponent from "../2md/TotalVolumeComponent";
+import TotalVolumeComponent from "../molecules/TotalVolumeComponent";
 const HomeWaterFlow: React.FC = () => {
   return (
     <div className="w-full px-3 pb-4 bg-primary03 rounded-lg">
