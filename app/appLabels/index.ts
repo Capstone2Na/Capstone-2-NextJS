@@ -1,6 +1,8 @@
 export const appLabels = {
   title: "HydroSync",
   tagLine: "Your Complete IoT Water Management Solution",
+  description:
+    "BSCpE 4 Capstone Project -- Developed by Dave Arlu Niño Tindoy and Team",
 
   rightDrawer: {
     label: "App Settings",

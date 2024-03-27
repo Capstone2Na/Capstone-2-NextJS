@@ -10,8 +10,12 @@ const ProfileButton = () => {
   const handleClose = () => setOpen(false);
   return (
     <>
-      <IconButton size="large" className="text-inherit" onClick={handleOpen}>
-        <AccountCircleIcon className=" text-3xl" />
+      <IconButton
+        size="large"
+        className="text-inherit  object-cover"
+        onClick={handleOpen}
+      >
+        <AccountCircleIcon className=" text-3xl lg:text-4xl" />
       </IconButton>
       <RightDrawer open={open} handleClose={handleClose} />
     </>

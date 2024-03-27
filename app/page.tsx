@@ -1,8 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { appLabels } from "./appLabels";
+import dynamic from "next/dynamic";
+import Loading from "@/components/atoms/Loading";
 
-export default function Home() {
+function Home() {
   return (
     <main className="content items-center overflow-x-hidden overflow-y-auto mx-auto h-full max-h-full text-secondary">
       <div className="flex flex-col pt-6">
@@ -15,7 +17,7 @@ export default function Home() {
             {appLabels.tagLine}
           </h2>
           <div className="my-4  h-60 border content items-center">
-            <span className="text-green-500">
+            <span className="text-green-500 text-center">
               Header Image: Image of a modern smart home with water management
               system installed
             </span>
@@ -35,3 +37,8 @@ export default function Home() {
     </main>
   );
 }
+
+export default dynamic(() => Promise.resolve(Home), {
+  ssr: true,
+  loading: () => <Loading />,
+});

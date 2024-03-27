@@ -18,7 +18,7 @@
     {
       "src": "windows11/SmallTile.scale-200.png",
       "sizes": "142x142",
-      "purpose": "any maskable"
+      "purpose": "maskable"
     },
     {
       "src": "windows11/SmallTile.scale-400.png",
@@ -453,8 +453,26 @@
       "sizes": "1024x1024"
     }
   ],
-  "theme_color": "#FFFFFF",
-  "background_color": "#FFFFFF",
+  "screenshots": [
+    {
+      "src": "HydroSync/black.png",
+      "sizes": "1500x350",
+      "type": "image/gif",
+      "form_factor": "wide",
+      "label": "HydroSync",
+      "description": "BSCpE 4 Capstone Project -- Developed by Dave Arlu Niño Tindoy and Team"
+    },
+    {
+      "src": "HydroSync/black.png",
+      "sizes": "1500x350",
+      "type": "image/gif",
+      "form_factor": "narrow",
+      "label": "HydroSync",
+      "description": "BSCpE 4 Capstone Project -- Developed by Dave Arlu Niño Tindoy and Team"
+    }
+  ],
+  "theme_color": "rgba(37, 99, 235, 1)",
+  "background_color": "rgba(203, 213, 224, 1)",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait"

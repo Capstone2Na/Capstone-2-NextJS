@@ -24,6 +24,7 @@ export interface FetchWaterContextType {
   switchStatus: number;
   valveState: number;
   doneSwitching: boolean;
+  deviceOnline: boolean;
 }
 
 // Create context
@@ -47,6 +48,7 @@ export const FetchWaterContext: React.Context<FetchWaterContextType> =
     switchStatus: 0,
     valveState: 0,
     doneSwitching: false,
+    deviceOnline: false,
   });
 
 // Fetch all data

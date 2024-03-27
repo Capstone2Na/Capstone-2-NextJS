@@ -1,4 +1,6 @@
 import React from "react";
+import dynamic from "next/dynamic";
+import Loading from "@/components/atoms/Loading";
 
 const Analytics = () => {
   return (
@@ -10,4 +12,7 @@ const Analytics = () => {
   );
 };
 
-export default Analytics;
+export default dynamic(() => Promise.resolve(Analytics), {
+  ssr: true,
+  loading: () => <Loading />,
+});
