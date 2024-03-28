@@ -10,7 +10,7 @@ import {
 } from "@/services/water.service";
 import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
-import Loading from "@/components/atoms/Loading";
+// import Loading from "@/components/atoms/Loading";
 
 const Dashboard = () => {
   const [deviceOnline, setDeviceOnline] = useState(true);
@@ -94,5 +94,6 @@ const Dashboard = () => {
 
 export default dynamic(() => Promise.resolve(Dashboard), {
   ssr: false,
-  loading: () => <Loading />,
+
+  // loading: () => <Loading />,
 });
