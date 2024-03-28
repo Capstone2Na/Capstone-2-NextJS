@@ -18,18 +18,18 @@ const RightDrawer = ({
 }) => {
   return (
     <Drawer open={open} anchor="right">
-      <div className="w-[100vw] max-w-3xl h-lvh bg-tertiary">
-        <div className="p-2 flex flex-row items-center justify-center border-b border-gray-200 relative text-primary bg-primary h-16">
+      <div className="w-[100vw] md:w-[50vw] lg:w-[30vw] max-w-3xl  md:maxw h-lvh bg-tertiary">
+        <div className="p-2 flex flex-row items-center justify-center  relative text-primary bg-primary h-16">
           <IconButton
             size="large"
-            className="text-primary absolute left-2 top-0 bottom-0"
+            className="text-primary absolute left-2 top-0 bottom-0 object-cover"
             onClick={handleClose}
           >
             <ArrowBackIosNew />
           </IconButton>
           <h6 className="text-xl font-bold">{appLabels.rightDrawer.label}</h6>
         </div>
-        <div className="p-3 overflow-y-auto">
+        <div className="p-3 overflow-y-auto bg-secondary mt-0">
           {/* Settings Section */}
           <UserProfile />
         </div>

@@ -6,15 +6,14 @@ import { appLabels } from "./appLabels";
 import Providers from "./providers";
 import { Metadata, Viewport } from "next";
 
-const inter = Noto_Sans({
+const appFont = Noto_Sans({
   subsets: ["cyrillic"],
-  weight: "300",
 });
 
 const APP_NAME = appLabels.title;
 const APP_DEFAULT_TITLE = appLabels.title;
 const APP_TITLE_TEMPLATE = `%s - ${appLabels.title}`;
-const APP_DESCRIPTION = appLabels.tagLine;
+const APP_DESCRIPTION = appLabels.description;
 
 export const metadata: Metadata = {
   manifest: "/manifest.json",
@@ -28,7 +27,7 @@ export const metadata: Metadata = {
     capable: true,
     statusBarStyle: "default",
     title: APP_DEFAULT_TITLE,
-    // startUpImage: [],
+    startupImage: ["/HydroSync/black.png"],
   },
   formatDetection: {
     telephone: false,
@@ -63,9 +62,11 @@ export default function RootLayout({
 }) {
   return (
     <ClerkProvider>
-      <html lang="en" suppressHydrationWarning={true}>
+      <html lang="en">
         <AppRouterCacheProvider>
-          <body className={`${inter.className} mx-auto`}>
+          <body
+            className={`${appFont.className} mx-auto flex flex-col justify-between bg-secondary text-secondary font-normal w-screen h-lvh min-h-lvh`}
+          >
             <Providers>{children}</Providers>
           </body>
         </AppRouterCacheProvider>

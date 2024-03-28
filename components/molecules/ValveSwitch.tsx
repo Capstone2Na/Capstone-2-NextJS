@@ -47,7 +47,7 @@ const SwitchComponent = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center pt-5">
+    <div className="flex flex-col justify-center items-center pt-2">
       <label htmlFor="material-switch">
         <Switch
           disabled={!doneSwitching}
@@ -66,7 +66,7 @@ const SwitchComponent = () => {
           id="material-switch"
         />
       </label>
-      <h1 className="text-sm">Valve Switch</h1>
+      <h1 className="label">Valve Switch</h1>
     </div>
   );
 };

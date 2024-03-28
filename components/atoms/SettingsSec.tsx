@@ -1,4 +1,3 @@
-import PropTypes, { ReactComponentLike } from "prop-types";
 import { ReactNode } from "react";
 
 const SettingsSec = ({
@@ -18,11 +17,6 @@ const SettingsSec = ({
       </div>
     </div>
   );
-};
-
-SettingsSec.propTypes = {
-  title: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
 };
 
 export default SettingsSec;

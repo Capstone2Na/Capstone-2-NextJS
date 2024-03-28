@@ -11,12 +11,12 @@ const TotalVolumeComponent = () => {
   ) as FetchWaterContextType;
 
   return (
-    <h6 className="ml-3">
+    <h4 className="text-lg font-bold md:text-2xl md:ml-20">
       {appLabels.dashboard.totalWaterUsage.title}:{" "}
       <span className="font-bold">
         {totalVolume} {appLabels.dashboard.totalWaterUsage.unit}
       </span>
-    </h6>
+    </h4>
   );
 };
 

@@ -2,13 +2,15 @@
 import HomeWaterQuality from "@/components/organisms/HomeWaterQuality";
 import HomeWaterFlow from "@/components/organisms/HomeWaterFlow";
 import ValveSwitch from "@/components/molecules/ValveSwitch";
-import RouteBox from "@/components/atoms/RouteBox";
+import IsDeviceOffline from "@/components/atoms/DeviceOffline";
 import {
   FetchWaterContext,
   fetchAllData,
   fetchStatus,
 } from "@/services/water.service";
 import { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
+import Loading from "@/components/atoms/Loading";
 
 const Dashboard = () => {
   const [deviceOnline, setDeviceOnline] = useState(true);
@@ -50,7 +52,7 @@ const Dashboard = () => {
   useEffect(() => {
     executeFetchStatus();
     const runFetchAllData = setInterval(executeFetchAllData, 3000);
-    const runCheckStatus = setInterval(executeFetchStatus, 5000);
+    const runCheckStatus = setInterval(executeFetchStatus, 10000);
     return () => {
       clearInterval(runFetchAllData);
       clearInterval(runCheckStatus);
@@ -74,16 +76,23 @@ const Dashboard = () => {
           valveState,
           doneSwitching,
           setdoneSwitching,
+          deviceOnline,
         }}
       >
-        <RouteBox>
+        <div className="mx-auto content h-full overflow-x-hidden overflow-y-auto text-secondary max-h-lvh lg:max-w-1/2 md:h-min lg:h-full flex flex-col lg:flex-row justify-between items-center lg:items-start pt-2 md:pt-3 lg:pt-6 relative">
           <HomeWaterFlow />
-          <HomeWaterQuality />
-          <ValveSwitch />
-        </RouteBox>
+          <div className="w-full lg:h-min lg:max-w-1/2 lg:ml-3 h-full flex flex-col justify-between mt-3 lg:mt-0 items-center lg:gap-4">
+            <HomeWaterQuality />
+            <ValveSwitch />
+          </div>
+          <IsDeviceOffline />
+        </div>
       </FetchWaterContext.Provider>
     </>
   );
 };
 
-export default Dashboard;
+export default dynamic(() => Promise.resolve(Dashboard), {
+  ssr: false,
+  loading: () => <Loading />,
+});
