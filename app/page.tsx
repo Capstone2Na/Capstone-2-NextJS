@@ -9,14 +9,14 @@ function Home() {
     <main className="content items-center overflow-x-hidden overflow-y-auto mx-auto h-full max-h-full text-secondary">
       <div className="flex flex-col pt-6">
         <div>
-          <h1 className="text-3xl font-semibold mb-2 text-center">
+          <h1 className="text-3xl font-bold mb-2 text-center">
             Welcome to{" "}
-            <span className="text-4xl font-bold">{appLabels.title}</span>
+            <span className="text-6xl font-bold">{appLabels.title}</span>
           </h1>
           <h2 className="text-sm font-semibold text-center">
             {appLabels.tagLine}
           </h2>
-          <div className="my-4  h-60 border content items-center">
+          <div className="my-4 h-60 border content items-center">
             <span className="text-green-500 text-center">
               Header Image: Image of a modern smart home with water management
               system installed

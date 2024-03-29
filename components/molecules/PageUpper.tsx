@@ -1,6 +1,6 @@
 import { appLabels } from "@/app/appLabels";
 import ProfileButton from "../atoms/ProfileButton";
-import { Righteous } from "next/font/google";
+import { Righteous } from "next/font/google"; 
 
 const logoFont = Righteous({
   weight: "400",
