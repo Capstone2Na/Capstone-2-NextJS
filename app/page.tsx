@@ -8,30 +8,30 @@ import { AppLogo } from "@/components/molecules/PageUpper";
 
 function Home() {
   return (
-
-
     <>
       <main className="w-full h-full overflow-x-hidden overflow-y-auto">
-        <div className="h-full relative items-center">
+        <div className="h-full max-h-lvh relative items-center w-full   ">
           <Image
             fill={true}
             quality={100}
             src={"/HydroSync/Image1.jpg"}
             alt="HydroSync Lading Img"
-            className=" object-cover w-screen relative -z-50 filter brightness-50"
+            className=" object-cover  w-screen relative -z-50 filter brightness-50"
           />
           <div className=" absolute top-0 h-full w-full flex flex-col items-center bg-gradient-to-b from-transparent to-black opacity-90">
-            <AppLogo className={"mx-auto mt-[60%] text-5xl text-primary"} />
-            <p className="text-tertiary text-xs mt-2">
+            <AppLogo
+              className={"mx-auto mt-[30vh] text-5xl text-primary lg:text-6xl"}
+            />
+            <p className="text-tertiary text-xs md:text-sm lg:text-xl mt-2 md:mt-3">
               BSCpE 4 Capstone Project{" "}
             </p>
             <Link
               href={"/dashboard"}
-              className="mt-2 animate-pulse duration-[2s]"
+              className="mt-2 animate-pulse duration-[2s] hover:animate-none "
             >
               <Button
-                variant="text"
-                className=" text-nowrap w-min bg-transparent hover:bg-buttonHover font-bold"
+                variant="outlined"
+                className=" text-nowrap w-min bg-transparent hover:bg-buttonHover hover:text-secondary font-bold lg:text-lg lg:px-4 lg:py-2 "
               >
                 Get Started
               </Button>
