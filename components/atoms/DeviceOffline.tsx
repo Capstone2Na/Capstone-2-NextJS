@@ -1,5 +1,5 @@
 "use client";
-import { appLabels } from "@/app/appLabels";
+
 import dynamic from "next/dynamic";
 import { useContext } from "react";
 import {
@@ -17,12 +17,12 @@ const IsDeviceOffline = () => {
         deviceOnline ? "hidden" : ""
       } absolute top-0 left-0 right-0 bottom-0 w-full h-full backdrop-blur-sm grid place-items-center`}
     >
-      <h1 className="text-center border rounded p-4 bg-primary03 text-primary">
-        <span className="font-bold">{appLabels.title}</span>
-        <br />
-        <br />
-        <h5 className="font-normal text-accent">Device Offline</h5>
-      </h1>
+      <div className="bg-primary text-center border rounded-lg px-10 py-6 animate-pulse duration-1000 ">
+        <h1 className="text-primary pb-2">
+          <span className="font-bold">Waiting</span>
+        </h1>
+        <h5 className="font-normal text-red-400">Device Offline</h5>
+      </div>
     </div>
   );
 };

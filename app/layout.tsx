@@ -5,6 +5,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { appLabels } from "./appLabels";
 import Providers from "./providers";
 import { Metadata, Viewport } from "next";
+import { dark, neobrutalism, shadesOfPurple } from '@clerk/themes';
 
 const appFont = Noto_Sans({
   subsets: ["cyrillic"],
@@ -61,11 +62,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider>
+    <ClerkProvider 
+    appearance={{
+      baseTheme:neobrutalism
+    }}
+    >
       <html lang="en">
         <AppRouterCacheProvider>
           <body
-            className={`${appFont.className} mx-auto flex flex-col justify-between bg-secondary text-secondary font-normal w-screen h-lvh min-h-lvh`}
+            className={`${appFont.className} mx-auto flex flex-col justify-between bg-secondary text-secondary font-normal w-screen h-lvh`}
           >
             <Providers>{children}</Providers>
           </body>
