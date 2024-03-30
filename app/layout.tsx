@@ -70,7 +70,7 @@ export default function RootLayout({
       <html lang="en">
         <AppRouterCacheProvider>
           <body
-            className={`${appFont.className} mx-auto flex flex-col justify-between bg-secondary text-secondary font-normal w-screen h-lvh min-h-lvh`}
+            className={`${appFont.className} mx-auto flex flex-col justify-between bg-secondary text-secondary font-normal w-screen h-lvh`}
           >
             <Providers>{children}</Providers>
           </body>
