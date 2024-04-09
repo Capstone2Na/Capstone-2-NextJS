@@ -35,7 +35,7 @@ p {
 }
 
 .section {
-  @apply w-screen flex justify-center items-center px-4;
+  @apply w-screen flex justify-center items-center;
 }
 
 .content {
