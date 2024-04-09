@@ -51,13 +51,17 @@ const Dashboard = () => {
 
   useEffect(() => {
     executeFetchStatus();
-    const runFetchAllData = setInterval(executeFetchAllData, 3000);
+    if (deviceOnline == true) {
+      const runFetchAllData = setInterval(executeFetchAllData, 3000);
+      return () => {
+        clearInterval(runFetchAllData);
+      };
+    }
     const runCheckStatus = setInterval(executeFetchStatus, 10000);
     return () => {
-      clearInterval(runFetchAllData);
       clearInterval(runCheckStatus);
     }; // Clean up the intervals on component unmount
-  }, []);
+  }, [deviceOnline]);
 
   useEffect(() => {
     console.log(`Device Online? : ${deviceOnline}`);
@@ -94,6 +98,4 @@ const Dashboard = () => {
 
 export default dynamic(() => Promise.resolve(Dashboard), {
   ssr: false,
-
-  // loading: () => <Loading />,
 });
