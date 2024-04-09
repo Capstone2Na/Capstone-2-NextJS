@@ -67,7 +67,7 @@ p {
   --color-bg-primary: rgb(27, 60, 126); /* darker gray */
   --color-bg-primary-03: rgba(255, 255, 255, 0.3);
   --color-bg-secondary: rgb(74, 85, 104); /* gray-700 */
-  --color-bg-tertiary: rgb(203, 213, 224); /* gray-300 */
+  --color-bg-tertiary: rgb(146, 154, 161); /* gray-300 */
   --color-text-primary: rgb(237, 242, 247); /* gray-100 */
   --color-text-secondary: rgb(255, 255, 255); /* gray-100 */
   --color-text-tertiary: rgb(247, 250, 252); /* gray-900 */
