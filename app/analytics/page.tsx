@@ -1,6 +1,7 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import { Grid } from "@mui/material";
+
 import Charts from "@/components/atoms/Charts";
 
 const Analytics = () => {
@@ -19,6 +20,7 @@ const Analytics = () => {
         charts 3
       </Grid>
     </Grid>
+
   );
 };
 
