@@ -6,7 +6,7 @@ import UserProfile from "../molecules/UserProfile";
 import SettingsSec from "../atoms/SettingsSec";
 import ThemeSelect from "../atoms/ThemeSelect";
 import ChangePassBtn from "../atoms/ChangePassBtn";
-import LogoutButton from "../atoms/LogoutButton";
+// import LogoutButton from "../atoms/LogoutButton";
 import { appLabels } from "@/app/appLabels";
 
 const RightDrawer = ({
@@ -38,7 +38,7 @@ const RightDrawer = ({
         </SettingsSec>
         <SettingsSec title={appLabels.rightDrawer.accountSettings}>
           <ChangePassBtn />
-          <LogoutButton />
+          {/* <LogoutButton /> */}
         </SettingsSec>
       </div>
     </Drawer>
