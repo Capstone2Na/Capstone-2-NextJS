@@ -1,20 +1,22 @@
 import React from "react";
 import dynamic from "next/dynamic";
-import Loading from "@/components/atoms/Loading";
-import Charts from "@/components/atoms/Charts";
+import { Grid } from "@mui/material";
 
 const Analytics = () => {
   return (
     <div className="section h-full overflow-x-hidden overflow-y-auto text-secondary">
-      <div className="content flex-col justify-between items-center h-full py-4 ">
-        {/* <Charts xAxis={} series={} width={800} height={600}/> */}
-        Belat
-      </div>
+      <Grid container spacing={2} className="mx-auto h-full">
+        <Grid item xs={12} className="h-11">
+          summary
+        </Grid>
+        <Grid item xs={12}>
+          chart 1
+        </Grid>
+      </Grid>
     </div>
   );
 };
 
 export default dynamic(() => Promise.resolve(Analytics), {
   ssr: true,
-  loading: () => <Loading />,
 });
