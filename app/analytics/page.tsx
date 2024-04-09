@@ -2,18 +2,25 @@ import React from "react";
 import dynamic from "next/dynamic";
 import { Grid } from "@mui/material";
 
+import Charts from "@/components/atoms/Charts";
+
 const Analytics = () => {
   return (
-    <div className="section h-full overflow-x-hidden overflow-y-auto text-secondary">
-      <Grid container spacing={2} className="mx-auto h-full">
-        <Grid item xs={12} className="h-11">
-          summary
-        </Grid>
-        <Grid item xs={12}>
-          chart 1
-        </Grid>
+    <Grid container spacing={2} className="h-full mx-4">
+      <Grid item xs={12}>
+        summary
       </Grid>
-    </div>
+      <Grid item xs={12}>
+        {/* <Charts /> */}
+      </Grid>
+      <Grid item xs={12}>
+        charts 2
+      </Grid>
+      <Grid item xs={12}>
+        charts 3
+      </Grid>
+    </Grid>
+
   );
 };
 
