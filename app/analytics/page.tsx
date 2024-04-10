@@ -3,8 +3,14 @@ import dynamic from "next/dynamic";
 import { Grid } from "@mui/material";
 import Summary from "@/components/atoms/Summary";
 
+const WaterQualityCharts = dynamic(
+  () => import("@/components/organisms/WaterQualityCharts"),
+  {
+    ssr: false,
+  }
+);
 const CustomBarchart = dynamic(
-  () => import("@/components/organisms/BarChart"),
+  () => import("@/components/organisms/CustomBarChart"),
   {
     ssr: false,
   }
@@ -38,7 +44,7 @@ const Analytics = () => {
         <Grid item xs={12} lg={2.6}>
           <Summary
             value={33.07}
-            label="Temperature"
+            label="Temperature (&deg;C)"
             sub="Average, Last 30 Minutes"
           />
         </Grid>
@@ -46,13 +52,7 @@ const Analytics = () => {
           <CustomBarchart />
         </Grid>
         <Grid item xs={12} height={500}>
-          <CustomBarchart />
-        </Grid>
-        <Grid item xs={12} md={6} height={500}>
-          <CustomBarchart />
-        </Grid>
-        <Grid item xs={12} md={6} height={500}>
-          <CustomBarchart />
+          <WaterQualityCharts />
         </Grid>
       </Grid>
     </div>

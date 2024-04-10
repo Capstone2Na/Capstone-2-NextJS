@@ -64,7 +64,7 @@ const chartSetting = {
     },
   ],
   series: [{ dataKey: "totalWater", valueFormatter }],
-  height: 400,
+  height: 300,
   sx: {
     [`& .${axisClasses.directionY} .${axisClasses.label}`]: {
       transform: "translateX(-10px)",
@@ -76,11 +76,14 @@ export default function CustomBarchart() {
   const value = 244.02;
   return (
     <div className="w-full flex flex-col gap-3 rounded-md overflow-hidden bg-tertiary">
-      <h1 className="bg-buttonHover px-4 py-2">Water Usage History</h1>
-      <div className="flex lg:flex-row lg:pl-8 lg:pr-4">
+      <h1 className="bg-blue-300 px-4 py-2">Water Usage History</h1>
+      <div className="flex flex-col items-center lg:flex-row lg:pl-8 lg:pr-4 gap-2">
         <div className="lg:w-[20%] flex flex-col gap-6 mt-6">
-          <h4>Total in Liters:</h4>
-          <h1 className="text-6xl">{value}</h1>
+          <h4 className="text-nowrap lg:text-wrap">
+            Total in Liters:{" "}
+            <span className=" text-3xl lg:text-6xl">{value}</span>
+          </h4>
+
           <SelectTimeFrame />
         </div>
         <BarChart
