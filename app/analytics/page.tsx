@@ -16,6 +16,17 @@ const CustomBarchart = dynamic(
   }
 );
 
+// export async function getStaticProps() {
+//   const response = await fetch("https://api.example.com/data");
+//   const data = await response.json();
+
+//   return {
+//     props: {
+//       data,
+//     },
+//   };
+// }
+
 const Analytics = () => {
   return (
     <div className="h-full w-full">
@@ -27,21 +38,21 @@ const Analytics = () => {
             sub="Total, Last 24 Hours"
           />
         </Grid>
-        <Grid item xs={12} lg={2.6}>
+        <Grid item xs={4} lg={2.6}>
           <Summary
             value={13.88}
             label="PH Level"
             sub="Average, Last 30 Minutes"
           />
         </Grid>
-        <Grid item xs={12} lg={2.6}>
+        <Grid item xs={4} lg={2.6}>
           <Summary
             value={2090.92}
             label="Turbidity (NTU)"
             sub="average, Last 30 Minutes"
           />
         </Grid>
-        <Grid item xs={12} lg={2.6}>
+        <Grid item xs={4} lg={2.6}>
           <Summary
             value={33.07}
             label="Temperature (&deg;C)"

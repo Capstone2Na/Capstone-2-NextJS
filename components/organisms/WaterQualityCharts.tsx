@@ -25,7 +25,9 @@ export default function WaterQualityCharts() {
   return (
     <>
       <div className="w-full flex flex-col gap-3 rounded-md overflow-hidden bg-tertiary">
-        <h1 className="bg-blue-300 px-4 py-2">Water Quality History</h1>
+        <h6 className="bg-blue-300 px-4 py-2 text-sm ">
+          Water Quality History
+        </h6>
         <div className="flex flex-col gap-16 my-4">
           <LineCharts
             timeSeries={timeStamps}
