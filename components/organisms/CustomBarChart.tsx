@@ -2,7 +2,7 @@
 import * as React from "react";
 import { BarChart } from "@mui/x-charts/BarChart";
 import { axisClasses } from "@mui/x-charts/ChartsAxis";
-import SelectTimeFrame from "../atoms/Select";
+// import SelectTimeFrame from "../atoms/Select";
 
 const dataset = [
   {
@@ -86,7 +86,7 @@ export default function CustomBarchart() {
             <span className=" text-2xl lg:text-5xl">{value}</span>
           </h4> */}
 
-          <SelectTimeFrame />
+          {/* <SelectTimeFrame /> */}
         </div>
         <BarChart
           dataset={dataset}
