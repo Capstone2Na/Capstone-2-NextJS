@@ -24,7 +24,7 @@ export default function LineCharts({
 }) {
   return (
     <div className="flex flex-col lg:flex-row lg:pl-8 lg:pr-4 items-center ">
-      <div className="lg:w-[20%] flex flex-col gap-6 mt-14 pl-4 rounded-md bg-blue-200">
+      <div className="lg:w-[20%] flex flex-col gap-6 mt-14 pl-4 ">
         <h4> {label}</h4>
         {/* <h1 className="text-xs lg:text-base">{value}</h1> */}
       </div>
