@@ -76,7 +76,7 @@ export default function CustomBarchart() {
   const value = 244.02;
   return (
     <div className="w-full flex flex-col gap-3 rounded-md overflow-hidden bg-tertiary">
-      <h1 className="bg-blue-300 px-4 py-2 text-xs lg:text-base">
+      <h1 className="bg-blue-300 px-4 py-2 text-sm lg:text-lg">
         Water Usage History
       </h1>
       <div className="flex flex-col items-center lg:flex-row lg:pl-8 lg:pr-4 gap-2">
