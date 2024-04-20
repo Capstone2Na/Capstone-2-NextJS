@@ -25,7 +25,7 @@ export default function WaterQualityCharts() {
   return (
     <>
       <div className="w-full flex flex-col gap-3 rounded-md overflow-hidden bg-tertiary">
-        <h6 className="bg-blue-300 px-4 py-2 text-sm ">
+        <h6 className="bg-blue-300 px-4 py-2 text-sm lg:text-lg">
           Water Quality History
         </h6>
         <div className="flex flex-col gap-16 my-4">
