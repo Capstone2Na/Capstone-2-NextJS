@@ -80,7 +80,7 @@ export default function CustomBarchart() {
         Water Usage History
       </h1>
       <div className="flex flex-col items-center lg:flex-row lg:pl-8 lg:pr-4 gap-2">
-        <div className="lg:w-[20%] flex flex-col gap-6 mt-6">
+        <div className="lg:w-[20%] flex flex-col gap-6">
           {/* <h4 className="text-nowrap lg:text-wrap text-xl lg:text-4xl">
             Total in Liters:{" "}
             <span className=" text-2xl lg:text-5xl">{value}</span>
