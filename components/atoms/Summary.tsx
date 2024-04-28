@@ -15,7 +15,7 @@ const Summary = ({
         {label}
       </h2>
       <h6 className="w-full text-xl lg:text-[4rem] bg-tertiary pl-4 font-semibold">
-        {String(value)}
+        {String(value.toFixed(2))}
       </h6>
       <p className="pl-5 w-full text-xs lg:text-lg">{sub}</p>
     </div>

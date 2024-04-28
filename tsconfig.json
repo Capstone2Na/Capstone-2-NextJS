@@ -31,14 +31,20 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
+    "**/*.js",
     "**/*.tsx",
+    "**/*.jsx",
     ".next/types/**/*.ts",
     "context/ThemeContext.tsx",
     "components/**/*.tsx",
+    "components/**/*.js",
+    "components/**/*.jsx",
     "app/**/*.tsx",
     "app/**/*.ts",
     "app/providers.jsx",
-    "services/database.service.js"
+    "app/firestoreConfig.js",
+    "services/database.service.js",
+    "app/analytics/page.jsx"
   ],
   "exclude": ["node_modules"]
 }

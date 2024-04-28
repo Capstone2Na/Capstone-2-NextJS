@@ -1,23 +1,12 @@
 import { LineChart } from "@mui/x-charts/LineChart";
 import dynamic from "next/dynamic";
 
-const data = [6.2, 7.4, 7, 6.8, 6.7, 7.2, 7.44];
-const timeSeries = [
-  "Page A",
-  "Page B",
-  "Page C",
-  "Page D",
-  "Page E",
-  "Page F",
-  "Page G",
-];
 export default function LineCharts({
-  timeSeries,
+  timeStamp,
   data,
   label,
-}: // value,
-{
-  timeSeries: string[] | any;
+}: {
+  timeStamp: string[] | any;
   data: number[];
   label: string;
   // value: number;
@@ -31,7 +20,13 @@ export default function LineCharts({
       {/* <div className="lg:w-[70%] rounded-md bg-blue-200 px-2 py-1 lg:px-4 lg:py4"> */}
       <LineChart
         skipAnimation={true}
-        xAxis={[{ data: timeSeries, scaleType: "point" }]}
+        xAxis={[
+          {
+            data: timeStamp,
+            scaleType: "point",
+            tickLabelStyle: { fontSize: 0 },
+          },
+        ]}
         series={[{ data }]}
         height={200}
         margin={{ top: 10, bottom: 20 }}
