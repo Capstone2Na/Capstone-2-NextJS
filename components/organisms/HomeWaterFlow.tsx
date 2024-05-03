@@ -14,14 +14,14 @@ const HomeWaterFlow: React.FC = () => {
           </h4>
         </div>
 
-        <div className="w-1/3 md:w-[28%] pr-3 flex flex-col items-center justify-start">
+        {/* <div className="w-1/3 md:w-[28%] pr-3 flex flex-col items-center justify-start">
           <WaterLevelComponent />
           <h4 className="label -mt-12 md:-mt-20">
             {appLabels.dashboard.waterLevel.title}
           </h4>
-        </div>
+        </div> */}
       </div>
-      <div className="w-full flex pt-4 mt-4">
+      <div className="w-full flex pt-4 mt-4 items-center">
         <TotalVolumeComponent />
       </div>
     </div>

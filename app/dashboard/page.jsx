@@ -20,7 +20,8 @@ const Dashboard = () => {
   const [waterLevel, setWaterLevel] = useState(0);
   const [totalVolume, setTotalVolume] = useState(0);
   const [waterTemp, setWaterTemp] = useState(0);
-  const [valveState, setValveState] = useState(true);
+  const [valveState, setValveState] = useState(1);
+  const [isAutoSwitching, setAutoSwitching] = useState(1);
   const [doneSwitching, setdoneSwitching] = useState(false);
 
   const executeFetchAllData = async () => {
@@ -34,6 +35,7 @@ const Dashboard = () => {
       setTotalVolume(data.v4);
       setWaterTemp(data.v5);
       setValveState(data.v9);
+      setAutoSwitching(data.v6);
       setdoneSwitching(true);
     } catch (error) {
       console.error("Error fetching all:", error);
@@ -83,6 +85,7 @@ const Dashboard = () => {
           doneSwitching,
           setdoneSwitching,
           deviceOnline,
+          isAutoSwitching,
         }}
       >
         <div className="mx-auto content h-full overflow-x-hidden overflow-y-auto text-secondary max-h-lvh lg:max-w-1/2 md:h-min lg:h-full flex flex-col lg:flex-row justify-between items-center lg:items-start pt-2 md:pt-3 lg:pt-6 relative">
