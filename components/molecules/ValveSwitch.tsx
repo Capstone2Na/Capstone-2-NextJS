@@ -118,8 +118,8 @@ const SwitchComponent = () => {
         />
       </label>
       <h1 className="label">Valve Switch</h1>
-      <span className="text-xs opacity-80">
-        {" Smart Switch: "}
+      <span className="text-xs ">
+        <span className="opacity-80">{" Smart Switch: "}</span>
         <span
           className={`${isAutoSwitching ? "text-green-300" : "text-accent"}`}
         >
