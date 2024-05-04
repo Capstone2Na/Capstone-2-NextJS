@@ -27,13 +27,21 @@ const Dashboard = () => {
   const executeFetchAllData = async () => {
     try {
       const data = await fetchAllData();
-      console.log(data);
-      setPhValue(data.v0);
+      // console.log(data);
+      // setPhValue(data.v0);
+      // setFlowRate(data.v1);
+      // setTurbidityValue(data.v2);
+      // setWaterLevel(data.v3);
+      // setTotalVolume(data.v4);
+      // setWaterTemp(data.v5);
+
+      setPhValue(7.32);
       setFlowRate(data.v1);
-      setTurbidityValue(data.v2);
+      setTurbidityValue(40.21);
       setWaterLevel(data.v3);
-      setTotalVolume(data.v4);
+      setTotalVolume(32.53);
       setWaterTemp(data.v5);
+
       setValveState(data.v9);
       setAutoSwitching(data.v6);
       setdoneSwitching(true);
