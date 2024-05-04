@@ -1,5 +1,5 @@
 import axios from "axios";
-import { createContext, useContext } from "react";
+import { createContext } from "react";
 
 type Data = {
   v0: Number; // Example: pH value
@@ -8,6 +8,7 @@ type Data = {
   v3: Number; // Example: Water level
   v4: Number; // Example: Total volume
   v5: Number; // Example: Water temperature
+  v6: Number; // Example: is auto Switching
   v9: Number; // Example: Valve Switch Status
 };
 
@@ -21,6 +22,7 @@ export interface FetchWaterContextType {
   waterLevel: number;
   totalVolume: number;
   waterTemp: number;
+  isAutoSwitching: number;
   switchStatus: number;
   valveState: number;
   doneSwitching: boolean;
@@ -47,6 +49,7 @@ export const FetchWaterContext: React.Context<FetchWaterContextType> =
     waterTemp: 0,
     switchStatus: 0,
     valveState: 0,
+    isAutoSwitching: 0,
     doneSwitching: false,
     deviceOnline: false,
   });

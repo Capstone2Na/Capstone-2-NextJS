@@ -3,6 +3,9 @@ import dynamic from "next/dynamic";
 const LiquidChart = dynamic(() => import("react-liquidchart"), {
   ssr: false,
 });
+// const GaugeComponent = dynamic(() => import("react-gauge-component"), {
+//   ssr: false,
+// });
 import { useContext } from "react";
 import { FetchWaterContext } from "../../services/water.service";
 
@@ -19,9 +22,8 @@ const WaterLevelComponent = () => {
   return (
     <LiquidChart
       responsive
-      // legend="Water Tank Level"
-      value={waterLevel}
-      showDecimal
+      value={waterLevel * 50}
+      textRe
       amplitude={4}
       frequency={2}
       animationTime={2000}
@@ -37,6 +39,28 @@ const WaterLevelComponent = () => {
       postfix="%"
       legendFontSize={0.4}
     />
+    // <GaugeComponent
+    //   minValue={0}
+    //   maxValue={3}
+    //   value={waterLevel}
+    //   type="radial"
+    //   labels={{
+    //     tickLabels: {
+    //       type: "inner",
+    //       ticks: [{ value: 1 }, { value: 2 }, { value: 3 }],
+    //     },
+    //   }}
+    //   arc={{
+    //     colorArray: ["add8e6", "00b7eb", "#4169e1"],
+    //     subArcs: [{ limit: 1 }, { limit: 2 }, { limit: 3 }],
+    //     padding: 0.02,
+    //     width: 0.3,
+    //   }}
+    //   pointer={{
+    //     elastic: true,
+    //     animationDelay: 0,
+    //   }}
+    // />
   );
 };
 export default WaterLevelComponent;
