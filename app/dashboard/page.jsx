@@ -37,6 +37,7 @@ const Dashboard = () => {
       setValveState(data.v9);
       setAutoSwitching(data.v6);
       setdoneSwitching(true);
+      // complete data
     } catch (error) {
       console.error("Error fetching all:", error);
     }
