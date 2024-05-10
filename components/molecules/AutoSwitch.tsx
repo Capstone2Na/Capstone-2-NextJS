@@ -38,9 +38,7 @@ const AutoSwitch = ({
       >
         <IconButton onClick={handleOpen} className="">
           <SettingsIcon
-            className={`text-primary transition-all duration-300  ${
-              enabled ? "text-green-300" : "text-accent animate-pulse"
-            }`}
+            className={`text-iconButton transition-all duration-300`}
           />
         </IconButton>
       </Tooltip>

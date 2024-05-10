@@ -15,10 +15,12 @@ module.exports = {
         secondary: "var(--color-bg-secondary)",
         tertiary: "var(--color-bg-tertiary)",
         button: "var(--color-bg-button)",
+        // iconButton: "var(--color-icon-button)",
         buttonHover: "var(--color-bg-button-hover)",
         input: "var(--color-bg-input)",
       },
       textColor: {
+        iconButton: "var(--color-icon-button)",
         accent: "var(--color-text-accent)",
         primary: "var(--color-text-primary)",
         secondary: "var(--color-text-secondary)",
