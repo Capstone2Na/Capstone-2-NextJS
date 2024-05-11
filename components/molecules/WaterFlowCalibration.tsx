@@ -83,6 +83,7 @@ const WaterFlowCalibration = () => {
               onChange={(e) => setNewCalibrationValue(Number(e.target.value))}
             />
             <br />
+            <br />
             <span className="text-accent">{`Warning: Setting the calibration value
             should only be done by experienced users.`}</span>
           </DialogContentText>
