@@ -78,7 +78,7 @@ const WaterFlowCalibration = () => {
             <br />
             <TextField
               type="number"
-              label="Calibration Value"
+              label="Set Calibration Value"
               value={newCalibrationValue}
               onChange={(e) => setNewCalibrationValue(Number(e.target.value))}
             />
