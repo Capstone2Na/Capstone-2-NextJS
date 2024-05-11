@@ -28,7 +28,7 @@ const Dashboard = () => {
   const executeFetchAllData = async () => {
     try {
       const data = await fetchAllData();
-      console.log(data);
+      console.log("fetched Data: ", data);
       setPhValue(data.v0);
       setFlowRate(data.v1);
       setTurbidityValue(data.v2);
@@ -53,7 +53,6 @@ const Dashboard = () => {
     try {
       const statusBool = await fetchStatus();
       setDeviceOnline(statusBool);
-      console.log(statusBool, deviceOnline);
     } catch (error) {
       console.error("Error fetching status:", error);
     }
@@ -62,14 +61,13 @@ const Dashboard = () => {
   useEffect(() => {
     executeFetchStatus();
     const runCheckStatus = setInterval(executeFetchStatus, 10000);
+    let runFetchAllData;
     if (deviceOnline == true) {
-      const runFetchAllData = setInterval(executeFetchAllData, 3000);
-      return () => {
-        clearInterval(runFetchAllData);
-      };
+      runFetchAllData = setInterval(executeFetchAllData, 3000);
     }
 
     return () => {
+      clearInterval(runFetchAllData);
       clearInterval(runCheckStatus);
     }; // Clean up the intervals on component unmount
   }, [deviceOnline]);

@@ -2,8 +2,11 @@
 import { useState, useEffect, useContext } from "react";
 import Switch from "react-switch";
 import {
+  disableSmartSwitch,
+  enableSmartSwitch,
   FetchWaterContext,
   FetchWaterContextType,
+  updateValveState,
 } from "@/services/water.service";
 import AutoSwitch from "./AutoSwitch";
 
@@ -15,8 +18,6 @@ const SwitchComponent = () => {
   const [autoSwitchEnabled, setAutoSwitchEnabled] = useState(false);
   const { valveState, doneSwitching, isAutoSwitching, setdoneSwitching } =
     useContext(FetchWaterContext) as FetchWaterContextType;
-  const setValveState = process.env.NEXT_PUBLIC_API_SET_VALVE_STATE;
-  const setAutoSwitchURL = process.env.NEXT_PUBLIC_API_SET_AUTOSWITCH;
 
   useEffect(() => {
     if (isAutoSwitching == 1) {
@@ -44,57 +45,40 @@ const SwitchComponent = () => {
 
   const handleAutoSwitchEanble = async () => {
     setAttemtingEnable(true);
-    fetch(setAutoSwitchURL + "1")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        console.log("Auto Switch Enabled");
-        return response.text();
-      })
-      .then(() => {
-        setOpenDialog(false);
-        setAutoSwitchEnabled(!autoSwitchEnabled);
-        setAttemtingEnable(false);
-      })
-      .catch((error) => console.error("There's Error:", error));
+    try {
+      await enableSmartSwitch();
+      console.log("Auto Switch Enabled");
+      setOpenDialog(false);
+      setAutoSwitchEnabled(true);
+      setAttemtingEnable(false);
+    } catch (error) {
+      console.error("There's Error:", error);
+    }
   };
 
   const handleAutoSwitchDisable = async () => {
     setAttemtingDisable(true);
-    fetch(setAutoSwitchURL + "0")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        console.log("Auto Switch Disabled");
-        return response.text();
-      })
-      .then(() => {
-        setOpenDialog(false);
-        setAutoSwitchEnabled(false);
-        setAttemtingDisable(false);
-      })
-      .catch((error) => console.error("There's Error:", error));
+
+    try {
+      await disableSmartSwitch();
+      console.log("Auto Switch Disabled");
+      setOpenDialog(false);
+      setAutoSwitchEnabled(false);
+      setAttemtingDisable(false);
+    } catch (error) {
+      console.error("There's Error:", error);
+    }
   };
 
   const handleValveChange = async (checked: boolean) => {
     setdoneSwitching(false);
-    const url = checked
-      ? setValveState + "1" // Set switch to ON
-      : setValveState + "0"; // Set switch to OFF
 
-    fetch(url)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.text();
-      })
-      .then(() => {
-        setChecked(checked);
-      })
-      .catch((error) => console.error("There's Error:", error));
+    try {
+      updateValveState(checked ? 1 : 0);
+      setChecked(checked);
+    } catch (error) {
+      console.error("Error Changing Valve State:", error);
+    }
   };
 
   return (
