@@ -61,6 +61,7 @@ p {
   --color-bg-input: rgb(237, 242, 247); /* gray-200 */
   --color-bg-button: rgb(37, 99, 235); /* blue-500 */
   --color-bg-button-hover: rgb(0, 95, 204); /* blue-300 */
+  --color-icon-button: rgb(58, 57, 57);
 }
 
 .dark {
@@ -76,4 +77,5 @@ p {
   --color-bg-input: rgb(74, 85, 104); /* gray-700 */
   --color-bg-button: rgb(74, 85, 104); /* gray-700 */
   --color-bg-button-hover: rgb(0, 102, 185); /* blue-500 */
+  --color-icon-button: rgb(165, 162, 173);
 }

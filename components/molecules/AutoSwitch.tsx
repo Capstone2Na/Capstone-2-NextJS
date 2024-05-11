@@ -8,7 +8,6 @@ import {
   Tooltip,
 } from "@mui/material";
 import SettingsIcon from "@mui/icons-material/Settings";
-import AutoModeIcon from "@mui/icons-material/AutoMode";
 import { LoadingButton } from "@mui/lab";
 import CloseIcon from "@mui/icons-material/Close";
 const AutoSwitch = ({
@@ -38,14 +37,12 @@ const AutoSwitch = ({
       >
         <IconButton onClick={handleOpen} className="">
           <SettingsIcon
-            className={`text-primary transition-all duration-300  ${
-              enabled ? "text-green-300" : "text-accent animate-pulse"
-            }`}
+            className={`text-iconButton transition-all duration-300`}
           />
         </IconButton>
       </Tooltip>
       <Dialog open={open} onClose={handleClose}>
-        <DialogTitle id="alert-dialog-title">
+        <DialogTitle id="smart-switch-dialog-title">
           {` Smart Switching ${enabled ? "Enabled" : "Disabled"}`}
         </DialogTitle>
         <IconButton
