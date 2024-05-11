@@ -54,7 +54,7 @@ const WaterFlowCalibration = () => {
       <Tooltip
         title="View Water Flow Calibration Setting"
         placement="bottom"
-        className="absolute top-2 right-2"
+        className="absolute top-6 right-4"
       >
         <IconButton onClick={() => setOpenDialog(true)}>
           <InfoIcon className={`text-iconButton transition-all duration-300`} />
