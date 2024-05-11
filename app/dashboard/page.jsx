@@ -23,6 +23,7 @@ const Dashboard = () => {
   const [valveState, setValveState] = useState(1);
   const [isAutoSwitching, setAutoSwitching] = useState(1);
   const [doneSwitching, setdoneSwitching] = useState(false);
+  const [flowcalibrationFactor, setFlowCalibrationFactor] = useState(0);
 
   const executeFetchAllData = async () => {
     try {
@@ -34,8 +35,13 @@ const Dashboard = () => {
       setWaterLevel(data.v3);
       setTotalVolume(data.v4);
       setWaterTemp(data.v5);
-      setValveState(data.v9);
       setAutoSwitching(data.v6);
+      if (data.v8 != flowcalibrationFactor) {
+        setFlowCalibrationFactor(data.v8);
+      }
+
+      setValveState(data.v9);
+
       setdoneSwitching(true);
       // complete data
     } catch (error) {
@@ -87,6 +93,8 @@ const Dashboard = () => {
           setdoneSwitching,
           deviceOnline,
           isAutoSwitching,
+          flowcalibrationFactor,
+          setFlowCalibrationFactor,
         }}
       >
         <div className="mx-auto content h-full overflow-x-hidden overflow-y-auto text-secondary max-h-lvh lg:max-w-1/2 md:h-min lg:h-full flex flex-col lg:flex-row justify-between items-center lg:items-start pt-2 md:pt-3 lg:pt-6 relative">

@@ -9,12 +9,14 @@ type Data = {
   v4: Number; // Example: Total volume
   v5: Number; // Example: Water temperature
   v6: Number; // Example: is auto Switching
+  v8: Number; // Example: Flow calibration factor
   v9: Number; // Example: Valve Switch Status
 };
 
 export interface FetchWaterContextType {
   fetchAllData: () => Promise<Data>;
   fetchStatus: () => Promise<boolean>;
+  changeCalibrationValue: () => Promise<number>;
   setdoneSwitching: (doneSwitching: boolean) => void;
   phValue: number;
   flowRate: number;
@@ -27,6 +29,8 @@ export interface FetchWaterContextType {
   valveState: number;
   doneSwitching: boolean;
   deviceOnline: boolean;
+  flowcalibrationFactor: number;
+  setFlowCalibrationFactor: (flowcalibrationFactor: number) => void;
 }
 
 // Create context
@@ -41,6 +45,12 @@ export const FetchWaterContext: React.Context<FetchWaterContextType> =
     fetchStatus: async () => {
       throw new Error("FetchWaterContext.Provider not found");
     },
+    setFlowCalibrationFactor: () => {
+      throw new Error("FetchWaterContext.Provider not found");
+    },
+    changeCalibrationValue: async () => {
+      throw new Error("FetchWaterContext.Provider not found");
+    },
     phValue: 0,
     flowRate: 0,
     turbidityValue: 0,
@@ -51,6 +61,7 @@ export const FetchWaterContext: React.Context<FetchWaterContextType> =
     valveState: 0,
     isAutoSwitching: 0,
     doneSwitching: false,
+    flowcalibrationFactor: 0,
     deviceOnline: false,
   });
 
@@ -76,5 +87,21 @@ export const fetchStatus = async (): Promise<boolean> => {
   } catch (error) {
     console.error("Error fetching device status:", error);
     throw error;
+  }
+};
+
+export const changeCalibrationValue = async (value: number): Promise<void> => {
+  const blynkToken = process.env.NEXT_PUBLIC_API_TOKEN;
+  try {
+    await axios.get("https://sgp1.blynk.cloud/external/api/update", {
+      params: {
+        token: blynkToken,
+        pin: "V8",
+        value: value,
+      },
+    });
+    console.log("Water Flow Calibration Value Set Successfully");
+  } catch (err) {
+    console.log("Error setting new Water Flow Calibration Value:", err);
   }
 };

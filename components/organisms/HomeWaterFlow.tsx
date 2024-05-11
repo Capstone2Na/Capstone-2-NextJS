@@ -4,13 +4,15 @@ import { appLabels } from "@/app/appLabels";
 import TotalVolumeComponent from "../molecules/TotalVolumeComponent";
 import { useContext } from "react";
 import { FetchWaterContext } from "@/services/water.service";
+import WaterFlowCalibration from "../molecules/WaterFlowCalibration";
 const HomeWaterFlow: React.FC = () => {
   const { waterLevel } = useContext(FetchWaterContext);
 
   return (
     <div className="w-full px-3 pb-4 bg-primary03 rounded-lg lg:py-10 flex flex-col lg:gap-10 ">
       <div className="flex flex-row w-full justify-center">
-        <div className="w-2/3 md:w-3/5">
+        <div className="w-2/3 md:w-3/5 relative">
+          <WaterFlowCalibration />
           <FlowRateComponent />
           <h4 className="flex flex-col items-center label -mt-4 justify-center">
             {appLabels.dashboard.flowRate.title}
