@@ -19,7 +19,7 @@ const FlowRateComponent = () => {
         },
         tickLabels: {
           type: "inner",
-          ticks: [{ value: 5 }, { value: 10 }, { value: 20 }, { value: 40 }],
+          ticks: [{ value: 10 }, { value: 20 }, { value: 30 }, { value: 40 }],
         },
       }}
       arc={{
