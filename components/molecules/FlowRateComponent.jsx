@@ -20,10 +20,10 @@ const FlowRateComponent = () => {
         tickLabels: {
           type: "inner",
           ticks: [
+            { value: 10 },
             { value: 20 },
+            { value: 30 },
             { value: 40 },
-            { value: 60 },
-            { value: 80 },
             //   { value: 100 },
           ],
         },
@@ -31,36 +31,6 @@ const FlowRateComponent = () => {
       arc={{
         colorArray: ["#F79F92", "#EA4228"],
         subArcs: [
-          {},
-          {},
-          {},
-          {},
-          {},
-          {},
-          {},
-          {},
-          {},
-          {},
-          {},
-          {},
-          {},
-          {},
-          {},
-          {},
-          {},
-          {},
-          {},
-          {},
-          {},
-          {},
-          {},
-          {},
-          {},
-          {},
-          {},
-          {},
-          {},
-          {},
           {},
           {},
           {},
@@ -90,7 +60,7 @@ const FlowRateComponent = () => {
         animationDelay: 0,
       }}
       minValue={0}
-      maxValue={99}
+      maxValue={49}
     />
   );
 };
