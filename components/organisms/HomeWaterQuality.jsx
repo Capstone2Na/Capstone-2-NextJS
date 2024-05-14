@@ -11,13 +11,13 @@ const HomeWaterQuality = () => {
       <h4 className=" text-center  flex-nowrap text-inherit font-semibold text-md md:text-xl">
         {appLabels.dashboard.waterQuality.temp.title}:{" "}
         <span className="font-bold text-lg md:text-2xl">
-          {waterTemp}
+          {waterTemp.toFixed(2)}
           {appLabels.dashboard.waterQuality.temp.unit}
         </span>
       </h4>
       <div className="flex flex-row w-full justify-between">
         <div className="w-[46%] flex flex-col ">
-          <PhComponent value={14} />
+          <PhComponent />
           <div className=" justify-center flex w-full">
             <h4 className="body2 flex flex-col justify-center items-center label">
               <span className="font-bold text-sm">{phValue.toFixed(2)}</span>
