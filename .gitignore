@@ -36,4 +36,4 @@ yarn-error.log*
 next-env.d.ts
 
 # SW
-*/swe-worker-development.js
+public/swe-worker-development.js
