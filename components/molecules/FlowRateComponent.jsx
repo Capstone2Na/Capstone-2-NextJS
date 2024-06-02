@@ -11,7 +11,7 @@ const FlowRateComponent = () => {
 
   return (
     <GaugeComponent
-      value={flowRate}
+      value={flowRate.toFixed(2)}
       type="radial"
       labels={{
         valueLabel: {
@@ -19,7 +19,7 @@ const FlowRateComponent = () => {
         },
         tickLabels: {
           type: "inner",
-          ticks: [{ value: 10 }, { value: 20 }, { value: 30 }, { value: 49 }],
+          ticks: [{ value: 10 }, { value: 20 }, { value: 30 }, { value: 40 }],
         },
       }}
       arc={{

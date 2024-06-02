@@ -88,7 +88,7 @@ const PhComponent = () => {
             },
           },
         }}
-        value={phValue}
+        value={phValue.toFixed(2)}
         minValue={0}
         maxValue={14}
       />

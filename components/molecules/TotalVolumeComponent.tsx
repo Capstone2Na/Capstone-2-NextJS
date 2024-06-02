@@ -14,7 +14,7 @@ const TotalVolumeComponent = () => {
     <h4 className="text-lg font-bold md:text-2xl md:ml-20">
       {appLabels.dashboard.totalWaterUsage.title}:{" "}
       <span className="font-bold">
-        {totalVolume} {appLabels.dashboard.totalWaterUsage.unit}
+        {totalVolume.toFixed(2)} {appLabels.dashboard.totalWaterUsage.unit}
       </span>
     </h4>
   );
